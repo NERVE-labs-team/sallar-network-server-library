@@ -165,7 +165,7 @@ export class InstanceManager {
   /**
    * Listens for specific messages from program instances.
    *
-   * @param data Event name.
+   * @param event Event name.
    * @param handler Callback to handle the event.
    */
   on<T extends MinimalEventPayload>(event: string, handler: EventHandler<T>) {

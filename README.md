@@ -1,5 +1,9 @@
 # @sallar-network/server
 
+<p align="center">
+    <img src="./logo.svg" width="400px">
+</p>
+
 ## Description
 
 Server-side library for manage and communicate with programs running on the sallar network.
@@ -8,6 +12,12 @@ Server-side library for manage and communicate with programs running on the sall
 
 ```bash
 $ npm i @sallar-network/server
+```
+
+## Docs
+
+```bash
+$ npm run generate-docs
 ```
 
 ## Build
