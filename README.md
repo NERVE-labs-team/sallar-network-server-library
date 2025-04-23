@@ -6,7 +6,7 @@
 
 ## Description
 
-Server-side library for manage and communicate with programs running on the sallar network.
+Server-side library for manage and communicate with programs running on the [sallar network](https://sallar.io/).
 
 ## Installation
 

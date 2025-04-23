@@ -8,9 +8,15 @@
     "build": "tsup",
     "generate-docs": "npx typedoc src/index.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "sallar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NERVE-labs-team/sallar-network-server-library.git"
+  },
+  "author": "Jakub Padło",
+  "license": "GPL",
   "description": "Server-side library for manage and communicate with programs running on the sallar network",
   "devDependencies": {
     "@types/express": "^5.0.1",
