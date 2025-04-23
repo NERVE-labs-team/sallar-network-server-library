@@ -28,7 +28,6 @@ $ npm link @sallar-network/server
 ## Example
 
 ```ts
-
 // Server
 
 import { InstanceManager } from '@sallar-network/server';
@@ -53,9 +52,10 @@ await manager.launch(({ worker_id }, manager) => {
 
 // Client
 
-import { ProgramManager } from '@sallar-network/client';
+import io from 'socket.io-client';
+import { InstanceManager } from '@sallar-network/client';
 
-const program = new ProgramManager();
+const program = new InstanceManager(io);
 
 program.on('say-hello', (_, manager) => {
     manager.emit('hello');
