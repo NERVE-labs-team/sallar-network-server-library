@@ -61,3 +61,5 @@ program.on('say-hello', (_, manager) => {
     manager.emit('hello');
 });
 ```
+
+[See the client library](https://github.com/NERVE-labs-team/sallar-network-client-library)
