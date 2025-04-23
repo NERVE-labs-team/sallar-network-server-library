@@ -216,6 +216,9 @@ export class InstanceManager {
     const worker = this._workers_atlas.get(socket_id);
     if (!worker) return;
     this._workers_atlas.delete(socket_id);
+    this._workers_array = this._workers_array.filter(
+      (value) => value !== worker.worker_id
+    );
 
     await rejectProgramInstance(worker.worker_id, this.config);
   }

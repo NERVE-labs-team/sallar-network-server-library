@@ -7,7 +7,7 @@ Server-side library for manage and communicate with programs running on the sall
 ## Installation
 
 ```bash
-Coming soon :)
+$ npm i @sallar-network/server
 ```
 
 ## Build
@@ -37,6 +37,11 @@ const manager = new InstanceManager({
     public_path: `./public`, // Your program files
     http_port: 3000,         // Your server port
     dev_mode: true,          // To test locally
+
+    // For production:
+    node_manager_server: process.env.node_manager_server,
+    program_token: process.env.program_token
+
 });
 
 // Listen for program event
