@@ -16,13 +16,13 @@ You can build and test the library on your own:
 
 ```bash
 $ npm run build
-$ npm link
 ```
 
 And add to your project:
 
 ```bash
-npm link @sallar-network/server
+$ npm link
+$ npm link @sallar-network/server
 ```
 
 ## Example
