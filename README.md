@@ -28,8 +28,6 @@ $ npm link @sallar-network/server
 ## Example
 
 ```ts
-// Server
-
 import { InstanceManager } from '@sallar-network/server';
 
 
@@ -52,18 +50,6 @@ manager.on('hello', ({ worker_id }) => {
 await manager.launch(({ worker_id }, manager) => {
     // Send events to program
     manager.emit('say-hello', null, worker_id);
-});
-
-
-// Client
-
-import io from 'socket.io-client';
-import { InstanceManager } from '@sallar-network/client';
-
-const program = new InstanceManager(io);
-
-program.on('say-hello', (_, manager) => {
-    manager.emit('hello');
 });
 ```
 
