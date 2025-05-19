@@ -64,3 +64,5 @@ await manager.launch(({ worker_id }, manager) => {
 ```
 
 [See the client library](https://github.com/NERVE-labs-team/sallar-network-client-library)
+
+[See the whole project case](https://github.com/NERVE-labs-team/sallar-counter-program-example)
