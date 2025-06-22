@@ -11,6 +11,7 @@ export const config_application = (
 
   /* Config CORS */
   app.use((req, res, next): void => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader(
       'Access-Control-Allow-Methods',
       'GET, POST, OPTIONS, DELETE, PATCH'
@@ -20,14 +21,16 @@ export const config_application = (
       'Content-Type, Authorization'
     );
     res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+    res.setHeader('X-Frame-Options', 'ALLOWALL');
+    res.setHeader(
+      'Content-Security-Policy',
+      `frame-ancestors *; script-src 'self' 'unsafe-eval' 'unsafe-inline' *;`
+    );
+
     res.setHeader('Cross-Origin-Opener-Policy', 'unsafe-none');
     res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless');
     res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
-
-    if (req.method === 'OPTIONS') {
-      res.sendStatus(204);
-      return;
-    }
 
     next();
   });
