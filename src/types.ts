@@ -6,6 +6,11 @@ export interface MinimalEventPayload {
 }
 
 /**
+ * Template to create own type as extension of minimum object.
+ */
+export type ProgramObject<T> = T & MinimalEventPayload;
+
+/**
  * Object needed create instance of `InstanceManager`.
  */
 export interface ManagerConfig {
