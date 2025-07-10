@@ -35,7 +35,8 @@ export type ErrorHandler = (
     | WorkerDisconnectedException
     | ConfirmationFailedException
     | RejectionFailedException
-    | Error
+    | Error,
+  self: InstanceManager
 ) => void | Promise<void>;
 
 /**
@@ -128,7 +129,7 @@ export class InstanceManager {
           await this.handleNewInstance(socket, data.worker_id);
           await on_connected(data, this);
         } catch (err) {
-          await on_error(data, err as any);
+          await on_error(data, err as any, this);
           socket.disconnect();
           return;
         }
@@ -138,7 +139,7 @@ export class InstanceManager {
             try {
               await handler(data, this);
             } catch (err) {
-              await on_error(data, err as any);
+              await on_error(data, err as any, this);
             }
           });
 
@@ -148,12 +149,13 @@ export class InstanceManager {
               data,
               new WorkerDisconnectedException(
                 'Connection to the worker has been lost'
-              )
+              ),
+              this
             );
 
             await this.handleInstanceDisconnection(socket.id);
           } catch (err) {
-            await on_error(data, err as any);
+            await on_error(data, err as any, this);
           }
         });
       });
